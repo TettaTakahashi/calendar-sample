@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendar = new Calendar(calendarEl, {
     plugins: [ dayGridPlugin ],
     initialView: 'dayGridMonth',
-    events: eventData // eventData変数を使用してイベントデータを渡す
+    events: '/event'
   });
 
   calendar.render();
