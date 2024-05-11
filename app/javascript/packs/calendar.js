@@ -6,7 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendar = new Calendar(calendarEl, {
     plugins: [ dayGridPlugin ],
     initialView: 'dayGridMonth',
-    events: '/event'
+    locale: "jp",
+    events: '/event',
+    
+    windowResize: function () { 
+        if (window.innerWidth < 991.98) {
+            calendar.changeView('listMonth');
+        } else {
+            calendar.changeView('dayGridMonth');
+        }
+    },
   });
 
   calendar.render();
